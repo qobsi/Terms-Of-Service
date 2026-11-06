@@ -39,7 +39,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Light without a decorative shape, top bar, or artificial blur. */
 body::before {
   position: fixed;
   z-index: -1;
@@ -69,7 +68,6 @@ body::before {
   }
 }
 
-/* The reader never fades at an edge where there is no more content. */
 .reading-surface {
   --top-fade: 0px;
   --bottom-fade: 0px;
@@ -142,7 +140,6 @@ h1 {
   line-height: 1.5;
   color: var(--muted);
 }
-/* Compact audio control: fixed, outside the document's masked scroll area. */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -265,8 +262,7 @@ h1 {
   line-height: 1;
   letter-spacing: 1px;
 }
-/* One centered visual track/thumb, regardless of the browser's native range styling.
-   The invisible native slider still handles pointer, touch and keyboard input. */
+
 .volume-rail {
   --fill: 20%;
   --thumb-y: 88.6px;
@@ -388,7 +384,6 @@ strong {
   font-weight: 600;
 }
 
-/* An inline definition, not an extra UI button. */
 .term-link {
   display: inline;
   margin: 0;
@@ -421,7 +416,6 @@ strong {
   outline-offset: 3px;
 }
 
-/* A quiet, contextual popover: gently follows the selected definition. */
 .frame-popover {
   position: fixed;
   inset: auto;
