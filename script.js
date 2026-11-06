@@ -2,7 +2,6 @@
 
 const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
 
-// Inline definition: hover, tap or focus any "frame" to open it.
 (() => {
   const reader = document.querySelector("#reading-surface");
   const popup = document.querySelector("#frame-popover");
@@ -192,7 +191,7 @@ const TRACKS = [
   const audio = new Audio();
   audio.preload = "none";
 
-  let mode = "loading"; // loading, playing, blocked, paused, muted, error
+  let mode = "loading";
   let wantsAudio = true;
   let lastVolume = 4;
   let current = -1;
@@ -252,7 +251,6 @@ const TRACKS = [
       const j = Math.floor(Math.random() * (i + 1));
       [queue[i], queue[j]] = [queue[j], queue[i]];
     }
-    // The next cycle must not start with the last song played.
     if (queue.length > 1 && queue[queue.length - 1] === previous) {
       [queue[0], queue[queue.length - 1]] = [queue[queue.length - 1], queue[0]];
     }
@@ -346,7 +344,6 @@ const TRACKS = [
     lastVolume = volume();
     audio.muted = false;
     audio.volume = volume() / 100;
-    // Slider is only shown while music is playing.
   });
 
   button.addEventListener("click", () => {
@@ -358,7 +355,6 @@ const TRACKS = [
         pause();
       }
     } else {
-      // A real button click supplies the gesture required by autoplay-blocking browsers.
       play(touch.matches);
     }
   });
@@ -379,5 +375,5 @@ const TRACKS = [
 
   drawSlider();
   render();
-  play(); // Attempt default-on; a browser may require a button click.
+  play();
 })();
